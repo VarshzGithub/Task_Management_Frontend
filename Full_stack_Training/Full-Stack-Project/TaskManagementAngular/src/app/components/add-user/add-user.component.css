@@ -1,0 +1,74 @@
+/* Centered container */
+.add-user-container {
+    max-width: 450px;
+    margin: 100px auto 50px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  .add-user-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+  
+  /* Form Inputs */
+  .add-user-container form div {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .add-user-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .add-user-container input,
+  .add-user-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .add-user-container input:focus,
+  .add-user-container select:focus {
+    border-color: #18bc9c;
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .add-user-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .add-user-container button:hover {
+    background-color: #18bc9c;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    .add-user-container {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  
