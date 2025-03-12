@@ -1,0 +1,48 @@
+/* Adjusted Dashboard Container */
+.dashboard {
+    max-width: 600px;
+    margin: 100px auto 50px auto; /* Increased top margin to place it below the navbar */
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+.dashboard h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* View Tasks Button */
+.btn-primary {
+    background-color: #3498db;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Hover Effect */
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .dashboard {
+        max-width: 90%;
+        padding: 20px;
+        margin-top: 80px; /* Adjusted margin for smaller screens */
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
