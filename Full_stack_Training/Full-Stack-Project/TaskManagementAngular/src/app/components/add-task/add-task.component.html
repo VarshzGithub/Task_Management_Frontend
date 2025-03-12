@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="add-task-form">
+  <h2>Create New Task</h2>
+  <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        class="form-control"
+        [(ngModel)]="task.description"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select
+        id="status"
+        name="status"
+        class="form-control"
+        [(ngModel)]="task.status"
+        required
+      >
+        <option value="Pending">Pending</option>
+        <option value="In-Pending">In-Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="assignedTo">Assign To (User ID):</label>
+      <input
+        type="number"
+        id="assignedTo"
+        name="assignedTo"
+        class="form-control"
+        [(ngModel)]="task.assignedTo.user_id"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="assignedBy">Assign By (User ID):</label>
+      <input
+        type="number"
+        id="assignedBy"
+        name="assignedBy"
+        class="form-control"
+        [(ngModel)]="task.assignedBy.user_id"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea
+        id="comment"
+        name="comment"
+        class="form-control"
+        [(ngModel)]="task.comment"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="dueDate">Due Date:</label>
+      <input
+        type="date"
+        id="dueDate"
+        name="dueDate"
+        class="form-control"
+        [(ngModel)]="task.dueDate"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+      Create Task
+    </button>
+  </form>
+</div>
+
