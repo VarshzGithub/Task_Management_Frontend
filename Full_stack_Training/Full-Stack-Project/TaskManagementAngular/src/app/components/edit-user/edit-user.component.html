@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="edit-user">
+  <h1>Edit User</h1>
+
+  <form [formGroup]="userForm" (ngSubmit)="hello()">
+    <div>
+      <label for="name">Username:</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Enter user name"
+        required
+      />
+      <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched">
+        <small *ngIf="userForm.get('name')?.errors?.['required']">Name is required.</small>
+        <small *ngIf="userForm.get('name')?.errors?.['minlength']">
+          Name must be at least 3 characters long.
+        </small>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter user email"
+        required
+      />
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <small *ngIf="userForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="userForm.get('email')?.errors?.['email']">Enter a valid email.</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role" required>
+        <option value="ADMIN">Admin</option>
+        <option value="MANAGER">Manager</option>
+        <option value="LEAD">Lead</option>
+        <option value="ASSOCIATE">Associate</option>
+      </select>
+      <div *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched">
+        <small>Role is required.</small>
+      </div>
+    </div>
+
+    <button type="submit" >Save</button>
+    <button type="button" (click)="router.navigate(['/view-all-users'])">
+      Cancel
+    </button>
+  </form>
+
+  <p *ngIf="!userForm">Loading user data...</p>
+</div>
+
