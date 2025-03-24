@@ -1,0 +1,85 @@
+/* Ensure full-page background without gaps */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Main Dashboard Content */
+.manager-dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  margin-top: 80px;
+}
+
+.manager-dashboard h1 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.manager-dashboard p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Buttons as Cards */
+.manager-dashboard div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* Card Style Buttons */
+.manager-dashboard button {
+  background-color: darksalmon;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+  text-align: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.manager-dashboard button:hover {
+  background-color: rgb(236, 171, 150);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manager-dashboard div {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .manager-dashboard div {
+    grid-template-columns: 1fr;
+  }
+}
