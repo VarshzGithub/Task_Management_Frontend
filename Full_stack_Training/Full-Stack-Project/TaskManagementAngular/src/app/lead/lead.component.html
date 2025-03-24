@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="lead-dashboard">
+    <h1>Welcome to the Lead Dashboard</h1>
+    <p>Here you can manage team tasks, track progress, and more.</p>
+
+    <div>
+        <button (click)="navigateToViewAllUsers()">View All Users</button>
+        <button (click)="navigateToAddTask()">Add Task</button>
+    </div>
+
+    <div class="navigation-buttons">
+        <button class="btn btn-primary" (click)="navigateToAssignedToMe()">View Tasks Assigned to Me</button>
+        <button class="btn btn-secondary" (click)="navigateToAssignedByMe()">View Tasks Assigned by Me</button>
+      </div>
+  </div>
+  
