@@ -1,0 +1,110 @@
+/* Container for the View All Users page */
+.view-all-users {
+    max-width: 900px;
+    margin:100px auto 50px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  .view-all-users h1 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #2c3e50;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    font-size: 16px;
+    background: #ffe6e6;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Table Styling */
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Table Headers */
+  .users-table th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Table Rows */
+  .users-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  /* Alternating row colors */
+  .users-table tbody tr:nth-child(even) {
+    background-color: #f4f4f9;
+  }
+  
+  /* Hover Effect */
+  .users-table tbody tr:hover {
+    background-color: #e8f5e9;
+    transition: background 0.3s ease;
+  }
+  
+  /* Button Styles */
+  .users-table button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+  }
+  
+  /* Edit Button */
+  .users-table button:first-child {
+    background-color: #18bc9c;
+    color: white;
+  }
+  
+  .users-table button:first-child:hover {
+    background-color: #149877;
+  }
+  
+  /* Delete Button */
+  .users-table button:last-child {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .users-table button:last-child:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .users-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .view-all-users {
+      width: 95%;
+      padding: 20px;
+    }
+  }
+  
