@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+
+   <div class="tasks-section">
+    <h2>Tasks Assigned by Me</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Assigned By</th>
+          <th>Assigned To</th>
+          <th>Due Date</th>
+          <th>Comments</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasksAssignedByMe">
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.assignedBy?.user_id }}</td>
+          <td>{{ task.assignedTo?.user_id }}</td>
+          <td>{{ task.dueDate | date }}</td>
+          <td>{{ task.comment }}</td>
+          <td>
+            <input type="text" [(ngModel)]="task.newComment" placeholder="Add a comment" />
+            <button (click)="addComment(task)">Add Comment</button>
+          </td>
+        </tr>
+        <tr *ngIf="tasksAssignedByMe.length === 0">
+          <td colspan="7">No tasks assigned by you yet.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
