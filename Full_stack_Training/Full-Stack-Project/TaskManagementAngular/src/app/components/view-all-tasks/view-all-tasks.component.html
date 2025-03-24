@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+   <div class="view-all-tasks">
+    <h2>All Tasks</h2>
+  
+   
+    <div *ngIf="loading" class="loader">Loading tasks...</div>
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+  
+    <table *ngIf="!loading && !error && tasks.length > 0" class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Assigned To</th>
+          <th>Assigned By</th>
+          <th>Actions</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.id }}</td>
+          <td>{{ task.description }}</td>
+          <td>
+            
+            <div *ngIf="selectedTaskId === task.id">
+              <select [(ngModel)]="updatedStatus" class="form-select">
+                <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+              </select>
+              <button (click)="saveStatus()" class="btn btn-success btn-sm">Save</button>
+              <button (click)="cancelEdit()" class="btn btn-secondary btn-sm">Cancel</button>
+            </div>
+           
+            <div *ngIf="selectedTaskId !== task.id">{{ task.status }}</div>
+          </td>
+          <td>{{ task.dueDate | date: 'yyyy-MM-dd' }}</td>
+          <td>{{ task.assignedTo }}</td>
+          <td>{{ task.assignedBy }}</td>
+          <td>
+            <button (click)="startEditStatus(task.id, task.status)" class="btn btn-primary btn-sm">Edit</button>
+            <button (click)="deleteTask(task.id)" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+          <td>
+            <button (click)="viewComment(task)" class="btn btn-info btn-sm">View Comment</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    
+    <div *ngIf="!loading && tasks.length === 0">
+      <p>No tasks found.</p>
+    </div>
+    <hr>
+    <!-- Comments Section -->
+  <div *ngIf="selectedCommentTask" class="comments-section">
+    <h3>Comments for Task ID {{ selectedCommentTask.id }}</h3>
+    <p><strong>Current Comments:</strong></p>
+    <pre>{{ selectedCommentTask.comment || 'No comments available.' }}</pre>
+
+    <div class="add-comment">
+      <textarea
+        [(ngModel)]="newComment"
+        placeholder="Add a new comment"
+        class="form-control"
+        rows="3"
+      ></textarea>
+      <button (click)="addComment(newComment)" class="btn btn-success btn-sm mt-2">Add Comment</button>
+    </div>
+  </div>
