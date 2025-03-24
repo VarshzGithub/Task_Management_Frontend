@@ -1,0 +1,103 @@
+/* Comments Container */
+.comments-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading */
+  .comments-container h2 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .comments-container h3 {
+    font-size: 18px;
+    color: #34495e;
+    margin-top: 20px;
+  }
+  
+  /* Task Details */
+  .comments-container p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Comments List */
+  .list-group {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .list-group-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    border-left: 4px solid #3498db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-group-item strong {
+    color: #2c3e50;
+  }
+  
+  /* No Comments */
+  .comments-container div p {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+  }
+  
+  /* Add Comment Section */
+  .add-comment {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Textarea */
+  .add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+  }
+  
+  /* Add Comment Button */
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .comments-container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .btn-primary {
+      font-size: 14px;
+    }
+  }
+  
