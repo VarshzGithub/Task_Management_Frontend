@@ -1,0 +1,114 @@
+/* Lead Dashboard Container */
+.lead-dashboard {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading */
+  .lead-dashboard h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .lead-dashboard p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons Container */
+  .lead-dashboard div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Card Style Buttons */
+  .lead-dashboard button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+  
+  /* Hover Effect */
+  .lead-dashboard button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  /* Navigation Buttons */
+  .navigation-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background-color: #2ecc71;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    background-color: #e74c3c;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .lead-dashboard {
+      max-width: 90%;
+      padding: 20px;
+    }
+  
+    .lead-dashboard div {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+    .btn-primary,
+    .btn-secondary {
+      font-size: 14px;
+    }
+  }
+  
