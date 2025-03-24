@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+
+<div class="tasks-section">
+  <h2>Tasks Assigned by Manager</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Assigned By</th>
+        <th>Assigned To</th>
+        <th>Due Date</th>
+        <th>Comments</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of managerAssignedTasks">
+        <td>{{ task.description }}</td>
+
+        <!-- Status Editing Dropdown -->
+        <td>
+          <span *ngIf="selectedTaskId !== task.id">{{ task.status }}</span>
+          <select *ngIf="selectedTaskId === task.id" [(ngModel)]="updatedStatus">
+            <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+          </select>
+        </td>
+
+        <td>{{ task.assignedBy?.user_id }}</td>
+        <td>{{ task.assignedTo?.user_id }}</td>
+        <td>{{ task.dueDate | date }}</td>
+        <td>{{ task.comment }}</td>
+
+        <!-- Actions -->
+        <td>
+          <!-- Edit Button -->
+          <button *ngIf="selectedTaskId !== task.id" (click)="startEditStatus(task.id, task.status)">
+            Edit Status
+          </button>
+          
+          <!-- Save Button -->
+          <button *ngIf="selectedTaskId === task.id" (click)="saveStatus()">Save</button>
+          
+          <!-- Cancel Button -->
+          <button *ngIf="selectedTaskId === task.id" (click)="cancelEdit()">Cancel</button>
+          
+          <!-- Delete Button -->
+          <button (click)="deleteTask(task.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+
+      <!-- No Tasks Message -->
+      <tr *ngIf="managerAssignedTasks.length === 0">
+        <td colspan="7">No tasks assigned by the manager yet.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
