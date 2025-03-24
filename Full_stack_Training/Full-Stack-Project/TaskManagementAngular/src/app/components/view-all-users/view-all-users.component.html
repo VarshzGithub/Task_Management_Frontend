@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="view-all-users">
+  <h1>All Users</h1>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- User Details Table -->
+  <table *ngIf="users.length > 0" class="users-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Modify Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.user_id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button (click)="editUser(user.user_id)">Edit</button>
+          <button (click)="onDelete(user)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
